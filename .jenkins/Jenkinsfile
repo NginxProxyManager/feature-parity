@@ -21,7 +21,7 @@ pipeline {
 		}
 		stage('Deploy') {
 			when {
-				branch 'main'
+				branch 'master'
 			}
 			steps {
 				npmFeatureParityRelease("$DOCS_BUCKET", "$DOCS_CDN")
