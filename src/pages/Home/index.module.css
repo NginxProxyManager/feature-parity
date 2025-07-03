@@ -1,0 +1,23 @@
+.fixedWidth {
+  width: 120px;
+  text-align: center;
+}
+
+.implemented {
+  color: var(--mantine-color-lime-8);
+}
+
+.notImplemented {
+  color: var(--mantine-color-red-8);
+}
+
+.unknown {
+  color: var(--mantine-color-blue-8);
+}
+
+.tableHeader {
+  background-color: light-dark(
+    var(--mantine-color-gray-2),
+    var(--mantine-color-dark-5)
+  );
+}

@@ -1,0 +1,38 @@
+pipeline {
+	agent {
+		label 'docker-multiarch'
+	}
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '5'))
+		disableConcurrentBuilds()
+		ansiColor('xterm')
+	}
+	environment {
+		DOCS_BUCKET = 'jc21-npm-feature-parity'
+		DOCS_CDN    = 'E269G625J8HJZ2'
+	}
+	stages {
+		stage('Build') {
+			steps {
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn install'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn lint'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn build'
+			}
+		}
+		stage('Deploy') {
+			when {
+				branch 'main'
+			}
+			steps {
+				npmFeatureParityRelease("$DOCS_BUCKET", "$DOCS_CDN")
+			}
+		}
+	}
+	post {
+		always {
+			sh 'echo Reverting ownership'
+			sh 'docker run --rm -v "$(pwd):/app" jc21/ci-tools chown -R "$(id -u):$(id -g)" /app'
+			printResult(true)
+		}
+	}
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "LDAP Login",
+    "description": "LDAP Authentication for user login",
+    "v2": false,
+    "v3": true
+  },
+  {
+    "name": "OAuth Login",
+    "desc": "Oauth Authentication for user login",
+    "v2": false,
+    "v3": true
+  },
+  {
+    "name": "Something else",
+    "desc": "Oauth Authentication for user login",
+    "v2": false,
+    "v3": null
+  }
+]
