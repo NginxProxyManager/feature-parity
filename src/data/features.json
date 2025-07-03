@@ -1,5 +1,29 @@
 [
   {
+    "name": "SQLite Database",
+    "description": "Can use SQLite for backend storage",
+    "v2": true,
+    "v3": true
+  },
+  {
+    "name": "MySQL/Maria Database",
+    "description": "Can use MySQL and MariaDB for backend storage",
+    "v2": true,
+    "v3": true
+  },
+  {
+    "name": "Postgres Database",
+    "description": "Can use Postgres for backend storage",
+    "v2": true,
+    "v3": true
+  },
+  {
+    "name": "Local Accounts",
+    "description": "Username/Password Authentication for user login",
+    "v2": true,
+    "v3": true
+  },
+  {
     "name": "LDAP Login",
     "description": "LDAP Authentication for user login",
     "v2": false,
@@ -12,9 +36,51 @@
     "v3": true
   },
   {
-    "name": "Something else",
-    "desc": "Oauth Authentication for user login",
+    "name": "Docker User and Group",
+    "description": "Can run the docker container as a specific user and group, not to be confused with jailing the container",
+    "v2": true,
+    "v3": true
+  },
+  {
+    "name": "DNS Challenge Certificates",
+    "description": "Creates certificates using DNS challenges",
+    "v2": true,
+    "v3": true
+  },
+  {
+    "name": "Certbot SSL",
+    "description": "Uses Certbot for SSL certificate management",
+    "v2": true,
+    "v3": false
+  },
+  {
+    "name": "Acme.sh SSL",
+    "description": "Uses Acme.sh for SSL certificate management",
+    "v2": false,
+    "v3": true
+  },
+  {
+    "name": "SSL for Streams",
+    "description": "",
+    "v2": true,
+    "v3": null
+  },
+  {
+    "name": "Password Reset via Email",
+    "description": "Sends emails for password reset",
     "v2": false,
     "v3": null
+  },
+  {
+    "name": "Two-Factor Authentication",
+    "description": "Allows enabling two-factor authentication for user accounts",
+    "v2": false,
+    "v3": null
+  },
+  {
+    "name": "Server-Sent Events",
+    "description": "Admin interface uses Server-Sent Events for real-time updates",
+    "v2": false,
+    "v3": true
   }
 ]
